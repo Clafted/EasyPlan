@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(241, 220, 249);
+    color: white;
+    font-family: "Trebuchet MS";
+}
+
+#plans {
+    display: flex;
+    flex-direction: column;
+}
+
+#plans div {
+    min-height: 20%;
+    width: 80vw;
+    margin: 1cm;
+    padding: 0.5cm;
+    background-color: rgb(62, 9, 62);
+    border-radius: 20px;
+}
