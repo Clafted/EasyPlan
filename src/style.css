@@ -1,0 +1,63 @@
+html, body {
+    margin: 0;
+    padding:0;
+    border: 0;
+}
+
+body {
+    background-color: rgb(241, 220, 249);
+    color: white;
+    font-family: "Trebuchet MS";
+}
+
+#plans {
+    margin: 0;
+    position: relative;
+    top: 2cm;
+    display: flex;
+    flex-direction: column;
+}
+
+#plans div {
+    min-height: 20vh;
+    padding: 5mm;
+    padding-top: 1cm;
+    background-image: linear-gradient("to top", rgb(62, 9, 62), rgb(241, 220, 249));
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.name, .date, .desc {
+    margin: 1mm 0;
+    background-color: rgb(50, 6, 50);
+    padding: 1mm;
+    border-radius: 10px;
+}
+
+.name {
+    font-size: 6vh;
+    min-height: 20%;
+}
+
+.date {
+    font-size: 3vh;
+    min-height: 5%
+}
+
+.desc {
+    font-size: 2vh;
+    min-height: 60%;
+}
+
+#menu {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 2cm;
+    box-shadow: 0 2mm 2mm rgba(0, 0, 0, 0.2);
+    background-color: rgb(188, 121, 193);
+    padding: 0 5mm;
+}
