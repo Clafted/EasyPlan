@@ -31,6 +31,9 @@ class Plan {
         nameEl.setAttribute("class", "name");
         dateEl.setAttribute("class", "date");
         descEl.setAttribute("class", "desc");
+        nameEl.setAttribute("placeholder", "What?");
+        dateEl.setAttribute("placeholder", "When?");
+        descEl.setAttribute("placeholder", "Tell me more...");
         nameEl.setAttribute("type", "text");
         dateEl.setAttribute("type", "text");
         descEl.setAttribute("type", "text");
