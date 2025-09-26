@@ -12,3 +12,4 @@
 1. ```git clone``` this repository
 2. Open the **index.html** file in the **./src** directory
 3. Start planning!
+4. Export to a printable HTML file with the export button

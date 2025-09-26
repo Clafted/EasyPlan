@@ -75,6 +75,7 @@ function changeTarget(idx) {
     plans[idx].enterPlan();
     target = idx;
     targetPlan = plans[target];
+    prop = 0;
 }
 
 function moveTarget(idx) {
@@ -104,27 +105,47 @@ function keydown(e) {
         else changeTarget(target-1);
         relocatePlans();
         targetPlan.name.focus();
+        prop=0;
     } else if (e.key == "ArrowDown") 
     {
         if (e.ctrlKey) moveTarget(target+1);
         else changeTarget(target+1);
         relocatePlans();
         targetPlan.name.focus();
+        prop=0;
     } else if (e.key == "Enter" && doublePress)     
     {
         addPlan();
         changeTarget(plans.length-1);
         targetPlan.name.focus();
+        prop=0;
+    } else if (e.key == "Tab")
+    {
+        e.preventDefault();
+        prop = (prop+1)%3;
+        targetPlan.element.children[prop].focus();
     }
     prevKey = e.key;
 }
 
-function download() {
-    const file = new File(["Hello World"], { type:"text/txt"});
+async function download() {
+    let exportContent;
+    let textStyle = 'font-family: "Arial"; padding: 2mm; border: 1mm solid black; border-radius: 2mm; background-color: rgba(226, 223, 223, 1);';
+    exportContent = "<!DOCTYPE html><html><body style='padding: 1cm;'>";
+    for (let plan of plans) {
+        exportContent += "<div style='padding: 1mm 3mm; border-radius: 5mm; width: auto; min-width: 2cm; box-shadow: 0mm 2mm 0mm black; margin: 1cm 0;'>"
+                        + "<h1 style='"+textStyle+"'>" + plan.name.value + "</h1>"
+                        + "<h2 style='"+textStyle+"'>" + plan.date.value + "</h2>"
+                        + "<p style='"+textStyle+"'>" + plan.desc.value + "</p>"  
+                    + "</div>";
+    }
+    exportContent += "</body></html>";
+
+    const file = new File([exportContent], { type:"text/txt"});
     const url = URL.createObjectURL(file);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "plan.txt";
+    link.download = "plan.html";
     link.click();
     URL.revokeObjectURL(url);
 }
