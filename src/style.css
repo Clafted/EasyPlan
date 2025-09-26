@@ -74,3 +74,14 @@ body {
     color: white;
     text-shadow: 0mm 0mm 4mm rgb(251, 38, 255);
 }
+
+#export {
+    width: 2cm;
+    height: 2cm;
+    border-radius: 100%;
+    z-index: 99;
+    background-image: linear-gradient(to bottom, rgb(171, 43, 181), rgb(100, 7, 107));
+    bottom: 1cm;
+    right: 1cm;
+    position:fixed;
+}

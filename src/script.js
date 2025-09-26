@@ -119,4 +119,14 @@ function keydown(e) {
     prevKey = e.key;
 }
 
+function download() {
+    const file = new File(["Hello World"], { type:"text/txt"});
+    const url = URL.createObjectURL(file);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "plan.txt";
+    link.click();
+    URL.revokeObjectURL(url);
+}
+
 window.onkeydown = keydown;
